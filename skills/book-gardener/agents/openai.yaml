@@ -1,0 +1,4 @@
+﻿interface:
+  display_name: "Book Gardener"
+  short_description: "Perform safe maintenance on book structure, links, and metadata."
+  default_prompt: "Use $book-gardener to clean up AINOTE manuscript structure and metadata."

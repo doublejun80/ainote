@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AINOTE 책방</title>
+  <meta name="description" content="웹에서 바로 읽을 수 있는 출판형 기술 책방 MVP. 지금은 AI 노트 1권을 공개하고, 다음 책을 확장할 수 있는 구조로 준비했습니다.">
+  <link rel="icon" type="image/svg+xml" sizes="any" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2218%22%20fill%3D%22%230F667A%22%2F%3E%3Cpath%20d%3D%22M18%2018.5c0-1.7%201.4-3.1%203.1-3.1h9.1c2%200%203.9.7%205.4%202v29.1c-1.4-1.1-3.1-1.7-5-1.7H18V18.5Z%22%20fill%3D%22%23FFF8EE%22%2F%3E%3Cpath%20d%3D%22M46%2018.5c0-1.7-1.4-3.1-3.1-3.1h-9.1c-2%200-3.9.7-5.4%202v29.1c1.4-1.1%203.1-1.7%205-1.7H46V18.5Z%22%20fill%3D%22%23EFE0C9%22%2F%3E%3Cpath%20d%3D%22M39%2014h6a3%203%200%200%201%203%203v13l-6-3.6-6%203.6V17a3%203%200%200%201%203-3Z%22%20fill%3D%22%23E2A44B%22%2F%3E%3Cpath%20d%3D%22M32%2019v27%22%20stroke%3D%22%230B5365%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E">
+  <link rel="shortcut icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2218%22%20fill%3D%22%230F667A%22%2F%3E%3Cpath%20d%3D%22M18%2018.5c0-1.7%201.4-3.1%203.1-3.1h9.1c2%200%203.9.7%205.4%202v29.1c-1.4-1.1-3.1-1.7-5-1.7H18V18.5Z%22%20fill%3D%22%23FFF8EE%22%2F%3E%3Cpath%20d%3D%22M46%2018.5c0-1.7-1.4-3.1-3.1-3.1h-9.1c-2%200-3.9.7-5.4%202v29.1c1.4-1.1%203.1-1.7%205-1.7H46V18.5Z%22%20fill%3D%22%23EFE0C9%22%2F%3E%3Cpath%20d%3D%22M39%2014h6a3%203%200%200%201%203%203v13l-6-3.6-6%203.6V17a3%203%200%200%201%203-3Z%22%20fill%3D%22%23E2A44B%22%2F%3E%3Cpath%20d%3D%22M32%2019v27%22%20stroke%3D%22%230B5365%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E">
+  <link rel="stylesheet" href="./site/styles.css">
+</head>
+<body class="storefront-page">
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand-mark" href="./">
+        <span class="brand-mark-badge" aria-hidden="true">
+          <svg class="brand-mark-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+            <rect width="64" height="64" rx="18" fill="#0F667A"/>
+            <path d="M18 18.5c0-1.7 1.4-3.1 3.1-3.1h9.1c2 0 3.9.7 5.4 2v29.1c-1.4-1.1-3.1-1.7-5-1.7H18V18.5Z" fill="#FFF8EE"/>
+            <path d="M46 18.5c0-1.7-1.4-3.1-3.1-3.1h-9.1c-2 0-3.9.7-5.4 2v29.1c1.4-1.1 3.1-1.7 5-1.7H46V18.5Z" fill="#EFE0C9"/>
+            <path d="M39 14h6a3 3 0 0 1 3 3v13l-6-3.6-6 3.6V17a3 3 0 0 1 3-3Z" fill="#E2A44B"/>
+            <path d="M32 19v27" stroke="#0B5365" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="brand-mark-copy">
+          <strong>AINOTE 책방</strong>
+          <small>Publishing MVP</small>
+        </span>
+      </a>
+      <nav class="site-nav">
+        <a href="./books/?book=ainote">대표 책</a>
+        <a href="./reader/">바로 읽기</a>
+        <a href="./README.md" target="_blank" rel="noreferrer">README</a>
+      </nav>
+    </header>
+
+    <main class="page-main">
+      <section class="hero-band">
+        <div class="hero-copy">
+          <p class="eyebrow">AINOTE Bookshelf</p>
+          <h1>AINOTE 책방</h1>
+          <p class="hero-lead"><strong>AI 노트</strong>, <strong>웹 개발 첫 지도</strong>, <strong>AI 자동화와 에이전트 워크플로우</strong>를 한곳에 모아두었습니다. 책 소개, 목차 미리보기, 실제 읽기 화면이 자연스럽게 이어져서 새 책도 같은 방식으로 차분하게 늘려갈 수 있습니다.</p>
+          <div class="hero-actions">
+            <a class="button-primary" href="./books/?book=ainote">대표 책 소개 보기</a>
+            <a class="button-secondary" href="./reader/">지금 바로 읽기</a>
+          </div>
+          <div class="metric-row">
+            <article class="metric-card">
+              <strong id="metric-live-books">1권</strong>
+              <span>공개 중인 책</span>
+            </article>
+            <article class="metric-card">
+              <strong id="metric-chapters">10장</strong>
+              <span>공개 중인 장 수</span>
+            </article>
+            <article class="metric-card">
+              <strong id="metric-sections">71절</strong>
+              <span>공개 중인 절 수</span>
+            </article>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-stack">
+            <div class="hero-stack-head">
+              <p>현재 공개 도서</p>
+              <strong>3권</strong>
+            </div>
+            <article class="hero-book hero-book-main">
+              <p>BOOK 01</p>
+              <h2>AI 노트</h2>
+              <span>초보자를 위한 개발의 큰 그림</span>
+            </article>
+            <article class="hero-book hero-book-side">
+              <p>BOOK 02</p>
+              <h2 class="cover-title">
+                <span class="cover-title-line">웹 개발 첫</span>
+                <span class="cover-title-line">지도</span>
+              </h2>
+              <span>브라우저에서 서버까지 이어 보는 웹 입문서</span>
+            </article>
+            <article class="hero-note">
+              <strong>읽기 흐름</strong>
+              <p>책 소개, 브라우저 리더, 정적 배포까지 같은 구조로 연결된 단정한 웹 서가</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Shelf</p>
+            <h2>지금 읽을 책과 다음 후보</h2>
+          </div>
+          <p class="section-copy">지금은 세 권을 바로 읽을 수 있고, 남아 있는 추천 후보도 같은 형식으로 계속 확장할 수 있습니다.</p>
+        </div>
+        <div id="shelf-grid" class="shelf-grid" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>AINOTE 책방 MVP는 정적 파일만으로 동작합니다. 대표 도서는 <a href="./books/?book=ainote">책 소개</a>와 <a href="./reader/">브라우저 리더</a>로 이어집니다.</p>
+    </footer>
+  </div>
+
+  <script type="module" src="./site/home.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+[
+  {
+    "number": 1,
+    "title": "브라우저와 첫 화면의 구조",
+    "dir": "ch01",
+    "sections": [
+      { "order": 1, "title": "브라우저는 무엇을 하나요?", "file": "section-01.md" },
+      { "order": 2, "title": "주소를 입력하면 페이지는 어떻게 찾아가나요?", "file": "section-02.md" },
+      { "order": 3, "title": "HTML, CSS, JavaScript는 각각 무슨 역할을 하나요?", "file": "section-03.md" },
+      { "order": 4, "title": "브라우저는 받은 파일을 어떻게 화면으로 바꾸나요?", "file": "section-04.md" }
+    ]
+  },
+  {
+    "number": 2,
+    "title": "화면과 사용자 상호작용",
+    "dir": "ch02",
+    "sections": [
+      { "order": 1, "title": "DOM과 이벤트는 왜 중요한가요?", "file": "section-01.md" },
+      { "order": 2, "title": "폼과 입력 검증은 왜 프론트엔드의 첫 업무인가요?", "file": "section-02.md" },
+      { "order": 3, "title": "상태와 저장은 어디에 머무르나요?", "file": "section-03.md" },
+      { "order": 4, "title": "반응형과 접근성은 왜 초반부터 봐야 하나요?", "file": "section-04.md" }
+    ]
+  },
+  {
+    "number": 3,
+    "title": "프론트엔드와 백엔드의 연결",
+    "dir": "ch03",
+    "sections": [
+      { "order": 1, "title": "프론트엔드와 백엔드는 어디서 나뉘나요?", "file": "section-01.md" },
+      { "order": 2, "title": "API를 붙인다는 말은 실제로 무엇을 하는 건가요?", "file": "section-02.md" },
+      { "order": 3, "title": "GET, POST, PUT, DELETE는 왜 나뉘나요?", "file": "section-03.md" },
+      { "order": 4, "title": "JSON, 비동기, fetch 흐름은 어떻게 연결되나요?", "file": "section-04.md" }
+    ]
+  },
+  {
+    "number": 4,
+    "title": "로그인과 보안의 기본 규칙",
+    "dir": "ch04",
+    "sections": [
+      { "order": 1, "title": "로그인은 왜 인증과 인가를 나눠서 봐야 하나요?", "file": "section-01.md" },
+      { "order": 2, "title": "세션과 쿠키는 어떤 관계인가요?", "file": "section-02.md" },
+      { "order": 3, "title": "토큰 방식은 언제 쓰이고 무엇을 조심해야 하나요?", "file": "section-03.md" },
+      { "order": 4, "title": "same-origin policy, CORS, HTTPS는 왜 중요한가요?", "file": "section-04.md" }
+    ]
+  },
+  {
+    "number": 5,
+    "title": "서버와 데이터의 책임",
+    "dir": "ch05",
+    "sections": [
+      { "order": 1, "title": "서버는 요청을 받으면 무슨 일을 하나요?", "file": "section-01.md" },
+      { "order": 2, "title": "라우트, 컨트롤러, 서비스 같은 구조는 왜 쓰나요?", "file": "section-02.md" },
+      { "order": 3, "title": "데이터베이스는 웹 서비스와 어떻게 연결되나요?", "file": "section-03.md" },
+      { "order": 4, "title": "캐시와 비동기 작업은 왜 필요해지나요?", "file": "section-04.md" }
+    ]
+  },
+  {
+    "number": 6,
+    "title": "개발환경과 프로젝트 운영 감각",
+    "dir": "ch06",
+    "sections": [
+      { "order": 1, "title": "개발환경과 배포환경은 왜 나뉘나요?", "file": "section-01.md" },
+      { "order": 2, "title": "프로젝트 폴더 구조는 왜 중요한가요?", "file": "section-02.md" },
+      { "order": 3, "title": "패키지 매니저와 빌드 도구는 무슨 일을 하나요?", "file": "section-03.md" },
+      { "order": 4, "title": "환경변수와 비밀 정보는 왜 분리해야 하나요?", "file": "section-04.md" }
+    ]
+  },
+  {
+    "number": 7,
+    "title": "배포와 운영까지 이어 보는 마지막 지도",
+    "dir": "ch07",
+    "sections": [
+      { "order": 1, "title": "정적 배포, 서버 배포, 서버리스는 어떻게 다른가요?", "file": "section-01.md" },
+      { "order": 2, "title": "도메인과 HTTPS는 어떤 순서로 연결되나요?", "file": "section-02.md" },
+      { "order": 3, "title": "로그, 모니터링, 성능 점검은 왜 개발 끝이 아니라 시작인가요?", "file": "section-03.md" },
+      { "order": 4, "title": "작은 웹 서비스를 끝까지 만드는 순서는 무엇인가요?", "file": "section-04.md" }
+    ]
+  }
+]

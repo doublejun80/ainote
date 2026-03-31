@@ -1,0 +1,427 @@
+[
+  {
+    "number": 1,
+    "title": "소프트웨어 개발",
+    "dir": "ch01",
+    "sections": [
+      {
+        "order": 1,
+        "title": "컴퓨터 전공자들은 어떤 것들을 배우나요?",
+        "file": "section-01.md"
+      },
+      {
+        "order": 2,
+        "title": "소프트웨어를 개발한다는 것은 무엇입니까?",
+        "file": "section-02.md"
+      },
+      {
+        "order": 3,
+        "title": "누구나 개발을 할 수 있나요?",
+        "file": "section-03.md"
+      },
+      {
+        "order": 4,
+        "title": "누가 소프트웨어 개발을 잘 할 수 있을까요?",
+        "file": "section-04.md"
+      }
+    ]
+  },
+  {
+    "number": 2,
+    "title": "소프트웨어의 종류와 특징",
+    "dir": "ch02",
+    "sections": [
+      {
+        "order": 1,
+        "title": "소프트웨어의 종류",
+        "file": "section-01.md"
+      },
+      {
+        "order": 2,
+        "title": "웹,웹앱, 네이티브 앱, 하이브리드 앱의 차이",
+        "file": "section-02.md"
+      },
+      {
+        "order": 3,
+        "title": "프론트 엔드와 백엔드",
+        "file": "section-03.md"
+      },
+      {
+        "order": 4,
+        "title": "웹 어플리케이션 개발",
+        "file": "section-04.md"
+      }
+    ]
+  },
+  {
+    "number": 3,
+    "title": "소프트웨어를 만드는 개발 언어 및 프레임워크",
+    "dir": "ch03",
+    "sections": [
+      {
+        "order": 1,
+        "title": "언제 어떤 언어를 선택하는 게 좋을까요?",
+        "file": "section-01.md"
+      },
+      {
+        "order": 2,
+        "title": "전공자들이 배우는 C언어",
+        "file": "section-02.md"
+      },
+      {
+        "order": 3,
+        "title": "C언어와 C++의 차이는 무엇인가요?",
+        "file": "section-03.md"
+      },
+      {
+        "order": 4,
+        "title": "자바(Java)는 어떤 언어인가요?",
+        "file": "section-04.md"
+      },
+      {
+        "order": 5,
+        "title": "객체지향이란 무엇인가요?",
+        "file": "section-05.md"
+      },
+      {
+        "order": 6,
+        "title": "프레임워크는 무엇이고, 어떤 프레임워크를 선택하는 게 좋을까요?",
+        "file": "section-06.md"
+      },
+      {
+        "order": 7,
+        "title": "프론트엔드 개발 언어는 무엇인가요?",
+        "file": "section-07.md"
+      },
+      {
+        "order": 8,
+        "title": "프론트엔드 개발에서 이벤트 처리가 무엇인가요?",
+        "file": "section-08.md"
+      },
+      {
+        "order": 9,
+        "title": "리액트(React)는무엇이고, 왜 많이 사용되나요?",
+        "file": "section-09.md"
+      },
+      {
+        "order": 10,
+        "title": "모바일 앱을 개발하는 언어 및 프레임워크는 무엇인가요?",
+        "file": "section-10.md"
+      },
+      {
+        "order": 11,
+        "title": "서버 프로그램을 만드는 언어는 무엇인가요?",
+        "file": "section-11.md"
+      },
+      {
+        "order": 12,
+        "title": "파이썬 나온지가 20년이나 되었는데, 많이 사용되는 이유는무엇인가요?",
+        "file": "section-12.md"
+      }
+    ]
+  },
+  {
+    "number": 4,
+    "title": "개발할 때 알아야 하는 필수 지식",
+    "dir": "ch04",
+    "sections": [
+      {
+        "order": 1,
+        "title": "자료 구조란 무엇인가요?",
+        "file": "section-01.md"
+      },
+      {
+        "order": 2,
+        "title": "함수, 클래스, 객체와 인스턴스, 모듈과 라이브러리, 컴포넌트, 프레임워크",
+        "file": "section-02.md"
+      },
+      {
+        "order": 3,
+        "title": "API vs OpenAPI",
+        "file": "section-03.md"
+      },
+      {
+        "order": 4,
+        "title": "REST API vs RESTful API",
+        "file": "section-04.md"
+      },
+      {
+        "order": 5,
+        "title": "동기와 비동기라는 개념은 무엇이고, 차이는 무엇인가요?",
+        "file": "section-05.md"
+      },
+      {
+        "order": 6,
+        "title": "Ajax라는 것은 무엇인가요?",
+        "file": "section-06.md"
+      },
+      {
+        "order": 7,
+        "title": "XML, Json은 프로그램인가요? 어떻게 생긴건가요?",
+        "file": "section-07.md"
+      },
+      {
+        "order": 8,
+        "title": "폴링과 이벤트 방식의 차이는 무엇인가요?",
+        "file": "section-08.md"
+      }
+    ]
+  },
+  {
+    "number": 5,
+    "title": "소프트웨어 공학",
+    "dir": "ch05",
+    "sections": [
+      {
+        "order": 1,
+        "title": "개발 방법론의 진화",
+        "file": "section-01.md"
+      },
+      {
+        "order": 2,
+        "title": "CBD 방법론은 무엇인가요?",
+        "file": "section-02.md"
+      },
+      {
+        "order": 3,
+        "title": "애자일 방법론은 무엇인가요?",
+        "file": "section-03.md"
+      },
+      {
+        "order": 4,
+        "title": "DevOps도 개발 방법론인가요?",
+        "file": "section-04.md"
+      },
+      {
+        "order": 5,
+        "title": "CI/CD는 무슨 일을 하는 건가요?",
+        "file": "section-05.md"
+      },
+      {
+        "order": 6,
+        "title": "소프트웨어 아키텍처라는 것은 무엇일까요?",
+        "file": "section-06.md"
+      }
+    ]
+  },
+  {
+    "number": 6,
+    "title": "컴퓨터 구조와 운영체제의 이해",
+    "dir": "ch06",
+    "sections": [
+      {
+        "order": 1,
+        "title": "컴퓨터 운영체제의 역사",
+        "file": "section-01.md"
+      },
+      {
+        "order": 2,
+        "title": "컴퓨터는 어떤 구성 요소로 되어 있나요?",
+        "file": "section-02.md"
+      },
+      {
+        "order": 3,
+        "title": "왜 모든 데이터를 메모리에 올리지 못하나요?",
+        "file": "section-03.md"
+      },
+      {
+        "order": 4,
+        "title": "메모리는 왜 캐시 메모리, 메인 메모리, 가상 메모리 나뉘어 사용되나요?",
+        "file": "section-04.md"
+      },
+      {
+        "order": 5,
+        "title": "여러 프로그램이 동시에 실행되는 원리는 무엇인가요?",
+        "file": "section-05.md"
+      },
+      {
+        "order": 6,
+        "title": "운영체제는 무슨 일을 하나요?",
+        "file": "section-06.md"
+      },
+      {
+        "order": 7,
+        "title": "멀티 스레드를 활용한 동시 수행",
+        "file": "section-07.md"
+      },
+      {
+        "order": 8,
+        "title": "커널(Kernel)이란 무엇인가요?",
+        "file": "section-08.md"
+      },
+      {
+        "order": 9,
+        "title": "프로그램, 프로세스, 프로세서의 차이가 뭔가요?",
+        "file": "section-09.md"
+      },
+      {
+        "order": 10,
+        "title": "프로세스와 쓰레드의 차이는 무엇인가요?",
+        "file": "section-10.md"
+      }
+    ]
+  },
+  {
+    "number": 7,
+    "title": "데이터베이스 기술",
+    "dir": "ch07",
+    "sections": [
+      {
+        "order": 1,
+        "title": "데이터베이스(DBMS)의 이해",
+        "file": "section-01.md"
+      },
+      {
+        "order": 2,
+        "title": "왜 앱과 DB를 바로 연동하지 않나요?",
+        "file": "section-02.md"
+      },
+      {
+        "order": 3,
+        "title": "NoSQL은 SQL이 아닌가요?",
+        "file": "section-03.md"
+      }
+    ]
+  },
+  {
+    "number": 8,
+    "title": "네트워크 기술",
+    "dir": "ch08",
+    "sections": [
+      {
+        "order": 1,
+        "title": "클라이언트 서버통신은 어떻게 되나요?",
+        "file": "section-01.md"
+      },
+      {
+        "order": 2,
+        "title": "웹 서버 접속 과정은 어떻게 되나요?",
+        "file": "section-02.md"
+      },
+      {
+        "order": 3,
+        "title": "웹과 WAS의 역할은 어떻게 되나요?",
+        "file": "section-03.md"
+      },
+      {
+        "order": 4,
+        "title": "웹 애플리케이션의 캐시",
+        "file": "section-04.md"
+      },
+      {
+        "order": 5,
+        "title": "프로토콜이란 무엇인가요?",
+        "file": "section-05.md"
+      },
+      {
+        "order": 6,
+        "title": "TCP/IP vs HTTP",
+        "file": "section-06.md"
+      },
+      {
+        "order": 7,
+        "title": "HTTP는 무엇인가요?",
+        "file": "section-07.md"
+      },
+      {
+        "order": 8,
+        "title": "웹 서버 접속 과정은 어떻게 되나요? (서버 안쪽에서 보는 흐름)",
+        "file": "section-08.md"
+      },
+      {
+        "order": 9,
+        "title": "세션과 쿠키는 무엇인가요?",
+        "file": "section-09.md"
+      },
+      {
+        "order": 10,
+        "title": "JWT란 무엇인가요?",
+        "file": "section-10.md"
+      },
+      {
+        "order": 11,
+        "title": "라우터, 스위치, 로드밸런서는 무엇인가요?",
+        "file": "section-11.md"
+      },
+      {
+        "order": 12,
+        "title": "통신에서 동기와 비동기는 어떻게 다른가요?",
+        "file": "section-12.md"
+      }
+    ]
+  },
+  {
+    "number": 9,
+    "title": "아키텍처",
+    "dir": "ch09",
+    "sections": [
+      {
+        "order": 1,
+        "title": "시스템 아키텍쳐란 무엇인가요?",
+        "file": "section-01.md"
+      },
+      {
+        "order": 2,
+        "title": "아키텍처를 잘 설계해야 하는 이유는 무엇인가요?",
+        "file": "section-02.md"
+      },
+      {
+        "order": 3,
+        "title": "시스템 아키텍처 비유: 스타벅스 매장",
+        "file": "section-03.md"
+      },
+      {
+        "order": 4,
+        "title": "MSA(마이크로서비스 아키텍처)는 왜 인기가 있을까요?",
+        "file": "section-04.md"
+      }
+    ]
+  },
+  {
+    "number": 10,
+    "title": "클라우드, 빅데이터, 인공지능",
+    "dir": "ch10",
+    "sections": [
+      {
+        "order": 1,
+        "title": "클라우드 컴퓨팅이란 무엇인가요?",
+        "file": "section-01.md"
+      },
+      {
+        "order": 2,
+        "title": "클라우드 컴퓨팅이 대세가 된 이유",
+        "file": "section-02.md"
+      },
+      {
+        "order": 3,
+        "title": "클라우드 서비스의 종류: IaaS, PaaS, SaaS",
+        "file": "section-03.md"
+      },
+      {
+        "order": 4,
+        "title": "하이브리드 클라우드와 멀티 클라우드는 무엇인가요?",
+        "file": "section-04.md"
+      },
+      {
+        "order": 5,
+        "title": "서버리스 컴퓨팅은 무엇인가요?",
+        "file": "section-05.md"
+      },
+      {
+        "order": 6,
+        "title": "도커, 컨테이너, 쿠버네티스란 무엇인가요?",
+        "file": "section-06.md"
+      },
+      {
+        "order": 7,
+        "title": "빅데이터란 무엇인가요?",
+        "file": "section-07.md"
+      },
+      {
+        "order": 8,
+        "title": "빅데이터 vs 머신러닝 vs 인공지능",
+        "file": "section-08.md"
+      }
+    ]
+  }
+]

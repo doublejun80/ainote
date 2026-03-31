@@ -1,0 +1,79 @@
+[
+  {
+    "number": 1,
+    "title": "자동화 후보를 찾는 눈",
+    "dir": "ch01",
+    "sections": [
+      { "order": 1, "title": "반복 업무는 어떻게 찾나요?", "file": "section-01.md" },
+      { "order": 2, "title": "좋은 자동화 후보는 어떤 조건을 가지나요?", "file": "section-02.md" },
+      { "order": 3, "title": "자동화 전에 업무를 어떻게 잘게 나누나요?", "file": "section-03.md" },
+      { "order": 4, "title": "실패 비용이 큰 일은 어떻게 다뤄야 하나요?", "file": "section-04.md" }
+    ]
+  },
+  {
+    "number": 2,
+    "title": "프롬프트에서 워크플로우로 넘어가기",
+    "dir": "ch02",
+    "sections": [
+      { "order": 1, "title": "좋은 프롬프트와 좋은 워크플로우는 무엇이 다른가요?", "file": "section-01.md" },
+      { "order": 2, "title": "입력 형식과 출력 형식을 왜 먼저 정해야 하나요?", "file": "section-02.md" },
+      { "order": 3, "title": "지시문, 예시, 체크리스트는 어떻게 나눠 써야 하나요?", "file": "section-03.md" },
+      { "order": 4, "title": "한 번에 시키지 않고 단계를 나누는 이유는 무엇인가요?", "file": "section-04.md" }
+    ]
+  },
+  {
+    "number": 3,
+    "title": "에이전트를 이루는 구성 요소",
+    "dir": "ch03",
+    "sections": [
+      { "order": 1, "title": "에이전트는 무엇으로 이루어지나요?", "file": "section-01.md" },
+      { "order": 2, "title": "도구를 쓴다는 말은 실제로 무엇을 뜻하나요?", "file": "section-02.md" },
+      { "order": 3, "title": "상태와 메모리는 왜 필요한가요?", "file": "section-03.md" },
+      { "order": 4, "title": "검색, 파일, 외부 시스템 연결은 어떻게 붙이나요?", "file": "section-04.md" }
+    ]
+  },
+  {
+    "number": 4,
+    "title": "워크플로우 설계 패턴",
+    "dir": "ch04",
+    "sections": [
+      { "order": 1, "title": "단일 호출, 워크플로우, 자율 에이전트는 어떻게 다른가요?", "file": "section-01.md" },
+      { "order": 2, "title": "planner-executor-reviewer 같은 역할 분리는 언제 쓰나요?", "file": "section-02.md" },
+      { "order": 3, "title": "사람 검토는 어느 단계에 들어가야 하나요?", "file": "section-03.md" },
+      { "order": 4, "title": "재시도, 중단 조건, 로그는 왜 설계에 들어가야 하나요?", "file": "section-04.md" }
+    ]
+  },
+  {
+    "number": 5,
+    "title": "실전 적용 시나리오",
+    "dir": "ch05",
+    "sections": [
+      { "order": 1, "title": "문서 초안 작성 자동화는 어떻게 설계하나요?", "file": "section-01.md" },
+      { "order": 2, "title": "조사와 요약 자동화는 무엇을 주의해야 하나요?", "file": "section-02.md" },
+      { "order": 3, "title": "개발 보조 에이전트는 어떤 흐름으로 일하나요?", "file": "section-03.md" },
+      { "order": 4, "title": "운영과 지원 자동화는 어디까지 맡길 수 있나요?", "file": "section-04.md" }
+    ]
+  },
+  {
+    "number": 6,
+    "title": "품질, 안전, 평가",
+    "dir": "ch06",
+    "sections": [
+      { "order": 1, "title": "정확도는 어떻게 확인하나요?", "file": "section-01.md" },
+      { "order": 2, "title": "안전 장치와 권한 설계는 왜 중요한가요?", "file": "section-02.md" },
+      { "order": 3, "title": "비용과 지연시간은 어떻게 관리하나요?", "file": "section-03.md" },
+      { "order": 4, "title": "eval과 피드백 루프는 왜 필요하나요?", "file": "section-04.md" }
+    ]
+  },
+  {
+    "number": 7,
+    "title": "팀에 정착시키는 자동화 운영법",
+    "dir": "ch07",
+    "sections": [
+      { "order": 1, "title": "개인 자동화와 팀 자동화는 무엇이 다른가요?", "file": "section-01.md" },
+      { "order": 2, "title": "프롬프트보다 문서와 규칙이 먼저인 이유는 무엇인가요?", "file": "section-02.md" },
+      { "order": 3, "title": "작은 성공 사례를 어떻게 제품 수준으로 키우나요?", "file": "section-03.md" },
+      { "order": 4, "title": "자동화를 도입한 뒤 사람의 일은 어떻게 달라지나요?", "file": "section-04.md" }
+    ]
+  }
+]

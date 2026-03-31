@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="brand-bg" x1="10" y1="8" x2="54" y2="58" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#163B49"/>
+      <stop offset="1" stop-color="#0F6A7D"/>
+    </linearGradient>
+    <linearGradient id="page-right" x1="31" y1="18" x2="47" y2="44" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF8EF"/>
+      <stop offset="1" stop-color="#E9DAC3"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="56" height="56" rx="18" fill="url(#brand-bg)"/>
+  <path d="M12 17C15.5 10.4 24.1 7.5 33.4 9.4C24.5 9.7 17.2 12.6 12 17Z" fill="#FFFFFF" fill-opacity=".14"/>
+  <path d="M17 19.5C17 17.25 19.01 15.56 21.22 15.93L29.89 17.37C31.67 17.66 33 19.2 33 21V43.62C30.82 41.84 27.72 40.84 24.1 40.84H17V19.5Z" fill="#FFF9F1"/>
+  <path d="M47 19.5C47 17.25 44.99 15.56 42.78 15.93L34.11 17.37C32.33 17.66 31 19.2 31 21V43.62C33.18 41.84 36.28 40.84 39.9 40.84H47V19.5Z" fill="url(#page-right)"/>
+  <path d="M38.1 13.5H45.4C46.84 13.5 48 14.66 48 16.1V27.9L41.75 24.14L35.5 27.9V16.1C35.5 14.66 36.66 13.5 38.1 13.5Z" fill="#E7B16B"/>
+  <path d="M32 20.9V44.2" stroke="#0C5D70" stroke-width="2.1" stroke-linecap="round" stroke-opacity=".34"/>
+  <path d="M17 40.84H24.1C27.72 40.84 30.82 41.84 33 43.62C35.18 41.84 38.28 40.84 41.9 40.84H47" stroke="#0B5366" stroke-width="1.4" stroke-linecap="round" stroke-opacity=".22"/>
+</svg>

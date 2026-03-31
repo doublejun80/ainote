@@ -1,0 +1,55 @@
+﻿project:
+  type: book
+  output-dir: _book
+
+lang: ko
+
+book:
+  title: "AI 노트"
+  subtitle: "AI 시대에 초보자가 알아야 할 개발의 큰 그림"
+  author: "AINOTE 프로젝트"
+  page-navigation: true
+  output-file: ai-note
+  chapters:
+    - index.md
+    - manuscript/prologue/index.md
+    - build/print/ch01.md
+    - build/print/ch02.md
+    - build/print/ch03.md
+    - build/print/ch04.md
+    - build/print/ch05.md
+    - build/print/ch06.md
+    - build/print/ch07.md
+    - build/print/ch08.md
+    - build/print/ch09.md
+    - build/print/ch10.md
+  appendices:
+    - manuscript/appendix/index.md
+    - manuscript/appendix/glossary.md
+    - manuscript/appendix/source-guide.md
+    - manuscript/appendix/reading-roadmaps.md
+    - manuscript/appendix/project-blueprints.md
+    - manuscript/appendix/checklists.md
+    - manuscript/appendix/faq.md
+    - manuscript/appendix/review-questions.md
+
+format:
+  html:
+    toc: true
+    number-sections: false
+    theme: litera
+  typst:
+    toc: true
+    number-sections: false
+    papersize: a4
+    margin:
+      x: 21mm
+      y: 24mm
+    fontsize: 12pt
+    linestretch: 1.26
+    mainfont: "Batang"
+    sansfont: "Malgun Gothic"
+    monofont: "Consolas"
+  epub:
+    toc: true
+    number-sections: false
