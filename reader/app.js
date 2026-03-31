@@ -5,56 +5,80 @@ const currentLabel = document.querySelector("#current-label");
 const currentMeta = document.querySelector("#current-meta");
 const prevButton = document.querySelector("#prev-button");
 const nextButton = document.querySelector("#next-button");
+const tocPageLink = document.querySelector("#toc-page-link");
 
+const VIRTUAL_TOC_PATH = "__toc__";
+const TOC_STATE_KEY = "ai-note-reader-toc-state";
 const entryIndex = [];
+const appendixEntries = [
+  { section: "부록", title: "부록", path: "manuscript/appendix/index.md" },
+  { section: "부록", title: "부록. 핵심 용어집", path: "manuscript/appendix/glossary.md" },
+  { section: "부록", title: "부록. 참고 자료와 검증 원칙", path: "manuscript/appendix/source-guide.md" },
+  { section: "부록", title: "부록. 읽는 순서와 30일·90일 학습 로드맵", path: "manuscript/appendix/reading-roadmaps.md" },
+  { section: "부록", title: "부록. 미니 프로젝트 설계 노트", path: "manuscript/appendix/project-blueprints.md" },
+  { section: "부록", title: "부록. 헷갈릴 때 꺼내 보는 점검표", path: "manuscript/appendix/checklists.md" },
+  { section: "부록", title: "부록. 초보자가 자주 묻는 질문", path: "manuscript/appendix/faq.md" },
+  { section: "부록", title: "부록. 스스로 점검하는 복습 질문", path: "manuscript/appendix/review-questions.md" }
+];
+
+let catalog = [];
 let allEntries = [];
 let currentEntry = null;
+let tocOpenState = loadTocOpenState();
 
 await bootstrap();
 
 async function bootstrap() {
-  const catalog = await fetchJson("/manuscript/catalog.json");
+  catalog = await fetchJson("/manuscript/catalog.json");
   allEntries = buildEntries(catalog);
-  renderToc(allEntries);
+
+  if (tocPageLink) {
+    tocPageLink.href = `#${encodeHash(VIRTUAL_TOC_PATH)}`;
+  }
+
+  renderToc(filteredEntries(searchInput.value));
   window.addEventListener("hashchange", handleLocationChange);
   searchInput.addEventListener("input", handleSearch);
   prevButton.addEventListener("click", () => navigateByOffset(-1));
   nextButton.addEventListener("click", () => navigateByOffset(1));
 
   if (!location.hash) {
-    location.hash = encodeHash("manuscript/index.md");
+    location.hash = encodeHash(VIRTUAL_TOC_PATH);
     return;
   }
 
   await handleLocationChange();
 }
 
-function buildEntries(catalog) {
+function buildEntries(catalogData) {
+  entryIndex.length = 0;
+
   const entries = [
-    { section: "시작", title: "AI 노트", path: "manuscript/index.md" },
-    { section: "시작", title: "프롤로그", path: "manuscript/prologue/index.md" }
+    { section: "시작", title: "전체 목차", path: VIRTUAL_TOC_PATH, kind: "virtual" },
+    { section: "시작", title: "AI 노트", path: "manuscript/index.md", kind: "page" },
+    { section: "시작", title: "프롤로그", path: "manuscript/prologue/index.md", kind: "page" }
   ];
 
-  for (const chapter of catalog) {
+  for (const chapter of catalogData) {
     const chapterDir = `manuscript/${chapter.dir}`;
     entries.push({
       section: `${chapter.number}장`,
       title: `${chapter.number}장. ${chapter.title}`,
-      path: `${chapterDir}/index.md`
+      path: `${chapterDir}/index.md`,
+      kind: "chapter-index"
     });
 
     for (const section of chapter.sections) {
       entries.push({
         section: `${chapter.number}장`,
         title: section.title,
-        path: `${chapterDir}/${section.file}`
+        path: `${chapterDir}/${section.file}`,
+        kind: "section"
       });
     }
   }
 
-  entries.push({ section: "부록", title: "부록", path: "manuscript/appendix/index.md" });
-  entries.push({ section: "부록", title: "부록. 핵심 용어집", path: "manuscript/appendix/glossary.md" });
-  entries.push({ section: "부록", title: "부록. 참고 자료와 검증 원칙", path: "manuscript/appendix/source-guide.md" });
+  entries.push(...appendixEntries.map((entry) => ({ ...entry, kind: "appendix" })));
 
   entries.forEach((entry, index) => {
     entry.index = index;
@@ -65,26 +89,58 @@ function buildEntries(catalog) {
 }
 
 function renderToc(entries) {
-  const activePath = decodeHash(location.hash.slice(1) || "manuscript/index.md");
+  const activePath = decodeHash(location.hash.slice(1) || VIRTUAL_TOC_PATH);
   const grouped = groupBy(entries, (entry) => entry.section);
+  const isSearching = Boolean(searchInput.value.trim());
   tocRoot.innerHTML = "";
 
   for (const [sectionTitle, sectionEntries] of grouped.entries()) {
     const wrap = document.createElement("section");
     wrap.className = "toc-section";
 
-    const title = document.createElement("h2");
-    title.className = "toc-section-title";
-    title.textContent = sectionTitle;
-    wrap.appendChild(title);
+    const activeInSection = sectionEntries.some((entry) => entry.path === activePath);
+    const isCollapsible = sectionTitle !== "시작";
+    const open = isSearching || activeInSection || sectionTitle === "시작" || tocOpenState[sectionTitle] === true;
+
+    if (isCollapsible) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "toc-section-toggle";
+      button.setAttribute("aria-expanded", String(open));
+      button.innerHTML = `
+        <span class="toc-section-title">${escapeHtml(sectionTitle)}</span>
+        <span class="toc-chevron" aria-hidden="true">›</span>
+      `;
+      button.addEventListener("click", () => {
+        const nextOpen = button.getAttribute("aria-expanded") !== "true";
+        button.setAttribute("aria-expanded", String(nextOpen));
+        list.hidden = !nextOpen;
+        list.classList.toggle("collapsed", !nextOpen);
+        tocOpenState[sectionTitle] = nextOpen;
+        saveTocOpenState();
+      });
+      wrap.appendChild(button);
+    } else {
+      const title = document.createElement("h2");
+      title.className = "toc-section-title";
+      title.textContent = sectionTitle;
+      wrap.appendChild(title);
+    }
 
     const list = document.createElement("ul");
     list.className = "toc-list";
+    list.hidden = !open;
+    if (!open) {
+      list.classList.add("collapsed");
+    }
 
     for (const entry of sectionEntries) {
       const item = document.createElement("li");
       const link = document.createElement("a");
       link.className = "toc-link";
+      if (entry.kind === "chapter-index") {
+        link.classList.add("chapter-link");
+      }
       if (entry.path === activePath) {
         link.classList.add("active");
       }
@@ -100,7 +156,7 @@ function renderToc(entries) {
 }
 
 async function handleLocationChange() {
-  const path = decodeHash(location.hash.slice(1) || "manuscript/index.md");
+  const path = decodeHash(location.hash.slice(1) || VIRTUAL_TOC_PATH);
   const entry = allEntries.find((item) => item.path === path) || allEntries[0];
   currentEntry = entry;
   renderToc(filteredEntries(searchInput.value));
@@ -109,12 +165,77 @@ async function handleLocationChange() {
 }
 
 async function loadArticle(path) {
+  if (path === VIRTUAL_TOC_PATH) {
+    currentLabel.textContent = "전체 목차";
+    currentMeta.textContent = "책 전체 구조를 보고 원하는 장과 절로 바로 이동하세요.";
+    articleRoot.innerHTML = renderTocLandingPage();
+    return;
+  }
+
   const raw = await fetchText(`/${path}`);
   const parsed = parseMarkdownDocument(raw, path);
   currentLabel.textContent = parsed.title || currentEntry.title;
-  currentMeta.textContent = `${currentEntry.section} 로컬 원고 미리보기`;
+  currentMeta.textContent = `${currentEntry.section} 책 보기`;
   articleRoot.innerHTML = parsed.html;
   wireInternalLinks(path);
+}
+
+function renderTocLandingPage() {
+  const chapterCards = catalog.map((chapter) => {
+    const chapterPath = `manuscript/${chapter.dir}/index.md`;
+    const sectionItems = chapter.sections
+      .map((section) => `
+        <li>
+          <a href="#${encodeHash(`manuscript/${chapter.dir}/${section.file}`)}">${escapeHtml(section.title)}</a>
+        </li>
+      `)
+      .join("");
+
+    return `
+      <section class="toc-page-card">
+        <div class="toc-page-card-head">
+          <div>
+            <p class="toc-page-kicker">${chapter.number}장</p>
+            <h2><a href="#${encodeHash(chapterPath)}">${escapeHtml(chapter.title)}</a></h2>
+          </div>
+          <a class="toc-page-jump" href="#${encodeHash(chapterPath)}">장으로 이동</a>
+        </div>
+        <ul class="toc-page-list">${sectionItems}</ul>
+      </section>
+    `;
+  }).join("");
+
+  const appendixItems = appendixEntries
+    .map((entry) => `<li><a href="#${encodeHash(entry.path)}">${escapeHtml(entry.title)}</a></li>`)
+    .join("");
+
+  return `
+    <section class="toc-page-hero">
+      <p class="toc-page-eyebrow">AI 노트 길잡이</p>
+      <h1>목차</h1>
+      <p>처음 읽을 때는 장 서문과 프롤로그부터 훑고, 다시 볼 때는 필요한 절로 바로 들어가면 됩니다. 아래에서 원하는 장을 눌러 바로 이동하세요.</p>
+      <div class="toc-page-quicklinks">
+        <a href="#${encodeHash("manuscript/index.md")}">책 소개</a>
+        <a href="#${encodeHash("manuscript/prologue/index.md")}">프롤로그</a>
+        <a href="#${encodeHash("manuscript/appendix/index.md")}">부록 안내</a>
+      </div>
+    </section>
+
+    <section class="toc-page-stack">
+      ${chapterCards}
+    </section>
+
+    <section class="toc-page-card toc-page-appendix">
+      <div class="toc-page-card-head">
+        <div>
+          <p class="toc-page-kicker">부록</p>
+          <h2><a href="#${encodeHash("manuscript/appendix/index.md")}">찾아보기와 학습 가이드</a></h2>
+        </div>
+        <a class="toc-page-jump" href="#${encodeHash("manuscript/appendix/index.md")}">부록으로 이동</a>
+      </div>
+      <ul class="toc-page-list">${appendixItems}</ul>
+    </section>
+  `;
 }
 
 function updatePager() {
@@ -143,13 +264,18 @@ function filteredEntries(query) {
   if (!normalized) {
     return allEntries;
   }
-  return allEntries.filter((entry) => entry.title.toLowerCase().includes(normalized));
+  return allEntries.filter((entry) => {
+    return entry.title.toLowerCase().includes(normalized) || entry.section.toLowerCase().includes(normalized);
+  });
 }
 
 function wireInternalLinks(basePath) {
   for (const anchor of articleRoot.querySelectorAll("a[href]")) {
     const href = anchor.getAttribute("href");
-    if (!href || href.startsWith("http://") || href.startsWith("https://") || href.startsWith("mailto:")) {
+    if (!href || href.startsWith("#")) {
+      continue;
+    }
+    if (href.startsWith("http://") || href.startsWith("https://") || href.startsWith("mailto:")) {
       anchor.target = "_blank";
       anchor.rel = "noreferrer";
       continue;
@@ -352,6 +478,23 @@ function encodeHash(value) {
 
 function decodeHash(value) {
   return decodeURIComponent(value);
+}
+
+function loadTocOpenState() {
+  try {
+    const raw = localStorage.getItem(TOC_STATE_KEY);
+    return raw ? JSON.parse(raw) : {};
+  } catch {
+    return {};
+  }
+}
+
+function saveTocOpenState() {
+  try {
+    localStorage.setItem(TOC_STATE_KEY, JSON.stringify(tocOpenState));
+  } catch {
+    // ignore storage failures in local preview mode
+  }
 }
 
 async function fetchText(url) {

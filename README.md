@@ -4,7 +4,7 @@ AI 시대에 초보자가 알아야 할 개발의 큰 그림을 한국어 Markdo
 
 ## 어떻게 보나
 
-가장 빠른 방법은 아래 명령으로 로컬 리더를 실행하는 것입니다.
+가장 빠른 방법은 아래 명령으로 브라우저 뷰어를 실행하는 것입니다.
 
 ```powershell
 node tools/serve-reader.mjs
@@ -19,10 +19,10 @@ node tools/serve-reader.mjs
 - `index.txt`: 원본 목차
 - `docs/`: 운영 원칙, 스타일 가이드, 품질 기준, 참고 자료 인덱스
 - `manuscript/`: Obsidian 호환 원고 원본
-- `reader/`: 브라우저용 로컬 리더
+- `reader/`: 브라우저 책 뷰어
 - `skills/`: 반복 집필과 검수를 위한 커스텀 Codex 스킬
 - `.github/workflows/`: PR 점검, Pages 배포, 야간 가드닝 자동화
-- `tools/`: 목차 동기화, 구조 검사, 링크 검사, 리뷰 리포트 생성, 로컬 서버
+- `tools/`: 목차 동기화, 구조 검사, 링크 검사, 리뷰 리포트 생성, 뷰어 서버
 
 ## 주요 명령
 

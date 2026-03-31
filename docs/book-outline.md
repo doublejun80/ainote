@@ -35,7 +35,7 @@
 
 - [자료 구조란 무엇인가요?](/C:/Users/05507/Documents/Github/AINOTE/manuscript/ch04/section-01.md)
 - [함수, 클래스, 객체와 인스턴스, 모듈과 라이브러리, 컴포넌트, 프레임워크](/C:/Users/05507/Documents/Github/AINOTE/manuscript/ch04/section-02.md)
-- [API vsOpenAPI](/C:/Users/05507/Documents/Github/AINOTE/manuscript/ch04/section-03.md)
+- [API vs OpenAPI](/C:/Users/05507/Documents/Github/AINOTE/manuscript/ch04/section-03.md)
 - [REST API vs RESTful API](/C:/Users/05507/Documents/Github/AINOTE/manuscript/ch04/section-04.md)
 - [동기와 비동기라는 개념은 무엇이고, 차이는 무엇인가요?](/C:/Users/05507/Documents/Github/AINOTE/manuscript/ch04/section-05.md)
 - [Ajax라는 것은 무엇인가요?](/C:/Users/05507/Documents/Github/AINOTE/manuscript/ch04/section-06.md)

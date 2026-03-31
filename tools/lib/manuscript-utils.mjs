@@ -1,4 +1,4 @@
-﻿import fs from "node:fs";
+import fs from "node:fs";
 import path from "node:path";
 
 export const repoRoot = process.cwd();
@@ -15,6 +15,25 @@ export const requiredSectionHeadings = [
   "이해 체크",
   "핵심 정리",
   "더 읽기"
+];
+
+export const repetitiveClosingHeadings = [
+  "이 내용을 알면 어디서 덜 막히는가",
+  "읽다가 흔들리는 지점",
+  "손으로 확인해 보면 더 빨리 남습니다",
+  "책 전체 흐름 속에서의 자리",
+  "실제로 만들 때는 이런 선택으로 이어집니다",
+  "초보자가 자주 섞어 보는 경계",
+  "작게 실험해 보면 이해가 단단해집니다",
+  "다음 절과 뒤쪽 장으로 이어지는 연결",
+  "여기서 많이 생기는 오해",
+  "읽고 끝내지 않으려면 이렇게 해 보세요",
+  "이 절을 단독 지식으로 두지 않는 방법",
+  "현업 장면으로 바꾸면 이렇게 보입니다",
+  "이후 장면을 읽을 때 다시 떠올릴 부분",
+  "이 개념이 실전에서 빛나는 순간",
+  "헷갈릴 때 다시 세워야 하는 기준",
+  "작은 확인이 큰 차이를 만듭니다",
 ];
 
 export function ensureDir(dirPath) {

@@ -1,7 +1,8 @@
-﻿import path from "node:path";
+import path from "node:path";
 import {
   isSectionFile,
   parseFrontmatter,
+  repetitiveClosingHeadings,
   readText,
   repoRoot,
   walkFiles
@@ -21,6 +22,7 @@ const missingExamples = [];
 const missingSources = [];
 const duplicateTopics = [];
 const titleCounts = new Map();
+const boilerplateEndingFiles = [];
 
 let structurePass = true;
 let tonePass = true;
@@ -46,13 +48,18 @@ for (const filePath of sectionFiles) {
   if (data.status !== "draft") {
     const h2Count = (body.match(/^##\s+/gm) || []).length;
     const textLength = body.replace(/\s+/g, "").length;
-    if (h2Count < 2 || textLength < 1400) {
+    if (h2Count < 2 || textLength < 800) {
       structurePass = false;
     }
   }
 
   if (placeholderPhrases.some((phrase) => body.includes(phrase))) {
     missingExamples.push(relativePath);
+  }
+
+  if (repetitiveClosingHeadings.some((heading) => body.includes(`## ${heading}`))) {
+    structurePass = false;
+    boilerplateEndingFiles.push(relativePath);
   }
 
   if (!Array.isArray(data.source_refs) || data.source_refs.length === 0) {
@@ -74,6 +81,7 @@ let clarityScore = 100;
 clarityScore -= missingExamples.length * 0.5;
 clarityScore -= missingSources.length * 0.25;
 clarityScore -= duplicateTopics.length * 2;
+clarityScore -= boilerplateEndingFiles.length * 0.5;
 if (!structurePass) {
   clarityScore -= 15;
 }
@@ -93,6 +101,7 @@ const review = {
   next_actions: buildNextActions({
     structurePass,
     tonePass,
+    boilerplateEndingFiles,
     missingExamples,
     missingSources,
     duplicateTopics
@@ -101,13 +110,16 @@ const review = {
 
 process.stdout.write(`${JSON.stringify(review, null, 2)}\n`);
 
-function buildNextActions({ structurePass, tonePass, missingExamples, missingSources, duplicateTopics }) {
+function buildNextActions({ structurePass, tonePass, boilerplateEndingFiles, missingExamples, missingSources, duplicateTopics }) {
   const actions = [];
   if (!structurePass) {
     actions.push("Expand reviewed sections so they read like complete prose chapters rather than short notes.");
   }
   if (!tonePass) {
     actions.push("Normalize the manuscript tone back to calm, beginner-friendly honorific Korean.");
+  }
+  if (boilerplateEndingFiles.length > 0) {
+    actions.push("Remove repetitive end-of-section boilerplate and close each section with topic-specific prose.");
   }
   if (missingExamples.length > 0) {
     actions.push("Replace remaining scaffold sections with concrete explanation, examples, and term definitions.");

@@ -6,7 +6,7 @@
 
 - 원본: `manuscript/`의 Markdown 원고
 - 편집/탐색: Obsidian에서 바로 열기
-- 빠른 로컬 열람: `reader/` 브라우저 리더
+- 빠른 브라우저 열람: `reader/` 책 뷰어
 - 정식 출판형 산출물: Quarto HTML/PDF/EPUB
 
 즉, 전용 책 프로그램을 새로 만드는 것이 핵심은 아닙니다. 원본 원고를 유지하고, 이미 검증된 오픈소스 도구로 보여 주는 것이 기본 전략입니다.
@@ -25,7 +25,7 @@ node tools/serve-reader.mjs
 http://127.0.0.1:4173/reader/
 ```
 
-이 방식은 Quarto가 없어도 바로 읽을 수 있는 로컬 미리보기입니다.
+이 방식은 Quarto가 없어도 바로 읽을 수 있는 브라우저 책 보기입니다.
 
 ## Obsidian에서 보는 방법
 
@@ -61,4 +61,4 @@ quarto render
 - mdBook: HTML 책 읽기 경험은 좋지만, PDF/EPUB까지 한 번에 가져가려면 지금 구조보다 덜 맞습니다.
 - Obsidian만 사용: 작성과 탐색은 좋지만, 정식 출판 산출물 관리에는 한계가 있습니다.
 
-현재 프로젝트에서는 **Obsidian + Quarto + 로컬 브라우저 리더** 조합이 가장 현실적입니다.
+현재 프로젝트에서는 **Obsidian + Quarto + 브라우저 뷰어** 조합이 가장 현실적입니다.

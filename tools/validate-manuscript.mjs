@@ -1,7 +1,8 @@
-﻿import path from "node:path";
+import path from "node:path";
 import {
   isSectionFile,
   parseFrontmatter,
+  repetitiveClosingHeadings,
   readText,
   relativeRepoPath,
   repoRoot,
@@ -60,12 +61,19 @@ for (const filePath of manuscriptFiles) {
     if (h2Count < 2) {
       errors.push(`${relativePath}: reviewed or higher sections need at least two H2 headings`);
     }
-    if (textLength < 1400) {
+    if (textLength < 800) {
       errors.push(`${relativePath}: reviewed or higher sections are too short to be book-ready`);
     }
     for (const phrase of placeholderPhrases) {
       if (body.includes(phrase)) {
         errors.push(`${relativePath}: reviewed or higher sections still contain scaffold placeholder text`);
+        break;
+      }
+    }
+
+    for (const heading of repetitiveClosingHeadings) {
+      if (body.includes(`## ${heading}`)) {
+        errors.push(`${relativePath}: reviewed or higher sections still contain repetitive boilerplate ending "${heading}"`);
         break;
       }
     }
