@@ -1,0 +1,46 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 노트 리더</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar-head">
+        <h1>AI 노트</h1>
+        <p>브라우저용 로컬 리더</p>
+      </div>
+      <label class="search-wrap">
+        <span>목차 검색</span>
+        <input id="search-input" type="search" placeholder="예: 운영체제, API, 클라우드">
+      </label>
+      <nav id="toc" class="toc"></nav>
+    </aside>
+
+    <main class="content-pane">
+      <header class="topbar">
+        <div>
+          <strong id="current-label">불러오는 중...</strong>
+          <p id="current-meta">manuscript/ 경로에서 원고를 읽고 있습니다.</p>
+        </div>
+        <div class="topbar-actions">
+          <a href="/README.md" target="_blank" rel="noreferrer">README</a>
+          <a href="/docs/book-outline.md" target="_blank" rel="noreferrer">전체 목차</a>
+        </div>
+      </header>
+
+      <article id="article" class="article"></article>
+
+      <footer class="pager">
+        <button id="prev-button" type="button">이전</button>
+        <button id="next-button" type="button">다음</button>
+      </footer>
+    </main>
+  </div>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

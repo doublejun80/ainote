@@ -1,0 +1,4 @@
+﻿interface:
+  display_name: "Tone Review"
+  short_description: "Review beginner tone and difficulty consistency across sections."
+  default_prompt: "Use $tone-review to review the tone and clarity of nearby AINOTE sections."

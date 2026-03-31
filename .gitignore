@@ -1,0 +1,16 @@
+_book/
+.quarto/
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+artifacts/
+dist/
+node_modules/
+
+/.quarto/
+**/*.quarto_ipynb
+
+vendor/
+*.msi
+*.zip
+.appdata/
+.localappdata/

@@ -1,0 +1,62 @@
+﻿name: Nightly Book Gardener
+
+on:
+  schedule:
+    - cron: "0 18 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  garden:
+    runs-on: ubuntu-latest
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Sync generated book structure
+        run: node tools/sync-manuscript.mjs
+
+      - name: Generate local review snapshot
+        run: |
+          mkdir -p artifacts
+          node tools/review-manuscript.mjs > artifacts/local-review.json
+
+      - name: Run Codex gardener
+        if: ${{ env.OPENAI_API_KEY != '' }}
+        uses: openai/codex-action@v1
+        with:
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+          prompt-file: .github/prompts/book-gardener.md
+          output-file: artifacts/gardener-summary.md
+          working-directory: .
+          sandbox: workspace-write
+
+      - name: Write fallback summary when key is missing
+        if: ${{ env.OPENAI_API_KEY == '' }}
+        run: |
+          cat <<'EOF' > artifacts/gardener-summary.md
+          # Nightly Book Gardener
+
+          OPENAI_API_KEY secret is not configured, so Codex maintenance was skipped.
+          EOF
+
+      - name: Create maintenance pull request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: "docs: nightly book gardening"
+          branch: "codex/nightly-book-gardener"
+          title: "docs: nightly book gardening"
+          body-path: artifacts/gardener-summary.md
+          delete-branch: true

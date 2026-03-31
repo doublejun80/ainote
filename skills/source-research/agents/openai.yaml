@@ -1,0 +1,4 @@
+﻿interface:
+  display_name: "Source Research"
+  short_description: "Collect authoritative sources for manuscript verification."
+  default_prompt: "Use $source-research to gather authoritative references for one AINOTE section."

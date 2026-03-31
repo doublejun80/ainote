@@ -1,0 +1,4 @@
+﻿interface:
+  display_name: "Section Drafter"
+  short_description: "Draft one book section in the fixed beginner-friendly format."
+  default_prompt: "Use $section-drafter to draft one AINOTE manuscript section."

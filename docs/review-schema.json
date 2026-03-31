@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AINOTE Review Result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "structure_pass",
+    "tone_pass",
+    "beginner_clarity_score",
+    "missing_examples",
+    "missing_sources",
+    "duplicate_topics",
+    "estimated_pages",
+    "next_actions"
+  ],
+  "properties": {
+    "structure_pass": {
+      "type": "boolean"
+    },
+    "tone_pass": {
+      "type": "boolean"
+    },
+    "beginner_clarity_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "missing_examples": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "missing_sources": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "duplicate_topics": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "estimated_pages": {
+      "type": "number",
+      "minimum": 0
+    },
+    "next_actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
