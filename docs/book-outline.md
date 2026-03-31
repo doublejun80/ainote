@@ -1,6 +1,6 @@
 # 책 목차
 
-이 문서는 현재 원고 frontmatter를 기준으로 갱신됩니다.
+이 문서는 `index.txt`를 기준으로 자동 생성됩니다.
 
 ## 1장. 소프트웨어 개발
 
@@ -34,7 +34,7 @@
 ## 4장. 개발할 때 알아야 하는 필수 지식
 
 - [자료 구조란 무엇인가요?](/C:/Users/05507/Documents/Github/AINOTE/manuscript/ch04/section-01.md)
-- [함수, 클래스, 객체와 인스턴스, 모듈과 라이브러리, 컴포넌트, 프레임워크](/C:/Users/05507/Documents/Github/AINOTE/manuscript/ch04/section-02.md)
+- [함수, 클래스, 객체와 인스턴스, 모듈과라이브러리, 컴포넌트, 프레임워크](/C:/Users/05507/Documents/Github/AINOTE/manuscript/ch04/section-02.md)
 - [API vs OpenAPI](/C:/Users/05507/Documents/Github/AINOTE/manuscript/ch04/section-03.md)
 - [REST API vs RESTful API](/C:/Users/05507/Documents/Github/AINOTE/manuscript/ch04/section-04.md)
 - [동기와 비동기라는 개념은 무엇이고, 차이는 무엇인가요?](/C:/Users/05507/Documents/Github/AINOTE/manuscript/ch04/section-05.md)
@@ -61,7 +61,7 @@
 - [운영체제는 무슨 일을 하나요?](/C:/Users/05507/Documents/Github/AINOTE/manuscript/ch06/section-06.md)
 - [멀티 스레드를 활용한 동시 수행](/C:/Users/05507/Documents/Github/AINOTE/manuscript/ch06/section-07.md)
 - [커널(Kernel)이란 무엇인가요?](/C:/Users/05507/Documents/Github/AINOTE/manuscript/ch06/section-08.md)
-- [프로그램, 프로세스, 프로세서의 차이가 뭔가요?](/C:/Users/05507/Documents/Github/AINOTE/manuscript/ch06/section-09.md)
+- [프로그램, 프로세스, 프로세서의 차이가뭔가요?](/C:/Users/05507/Documents/Github/AINOTE/manuscript/ch06/section-09.md)
 - [프로세스와 쓰레드의 차이는 무엇인가요?](/C:/Users/05507/Documents/Github/AINOTE/manuscript/ch06/section-10.md)
 
 ## 7장. 데이터베이스 기술
@@ -79,7 +79,7 @@
 - [프로토콜이란 무엇인가요?](/C:/Users/05507/Documents/Github/AINOTE/manuscript/ch08/section-05.md)
 - [TCP/IP vs HTTP](/C:/Users/05507/Documents/Github/AINOTE/manuscript/ch08/section-06.md)
 - [HTTP는 무엇인가요?](/C:/Users/05507/Documents/Github/AINOTE/manuscript/ch08/section-07.md)
-- [웹 서버 접속 과정은 어떻게 되나요? (서버 안쪽에서 보는 흐름)](/C:/Users/05507/Documents/Github/AINOTE/manuscript/ch08/section-08.md)
+- [웹 서버 접속 과정은 어떻게 되나요?](/C:/Users/05507/Documents/Github/AINOTE/manuscript/ch08/section-08.md)
 - [세션과 쿠키는 무엇인가요?](/C:/Users/05507/Documents/Github/AINOTE/manuscript/ch08/section-09.md)
 - [JWT란 무엇인가요?](/C:/Users/05507/Documents/Github/AINOTE/manuscript/ch08/section-10.md)
 - [라우터, 스위치, 로드밸런서는 무엇인가요?](/C:/Users/05507/Documents/Github/AINOTE/manuscript/ch08/section-11.md)

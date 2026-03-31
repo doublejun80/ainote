@@ -1,4 +1,4 @@
-﻿project:
+project:
   type: book
   output-dir: _book
 
@@ -9,47 +9,107 @@ book:
   subtitle: "AI 시대에 초보자가 알아야 할 개발의 큰 그림"
   author: "AINOTE 프로젝트"
   page-navigation: true
-  output-file: ai-note
   chapters:
-    - index.md
+    - manuscript/index.md
     - manuscript/prologue/index.md
-    - build/print/ch01.md
-    - build/print/ch02.md
-    - build/print/ch03.md
-    - build/print/ch04.md
-    - build/print/ch05.md
-    - build/print/ch06.md
-    - build/print/ch07.md
-    - build/print/ch08.md
-    - build/print/ch09.md
-    - build/print/ch10.md
+    - manuscript/ch01/index.md
+    - manuscript/ch01/section-01.md
+    - manuscript/ch01/section-02.md
+    - manuscript/ch01/section-03.md
+    - manuscript/ch01/section-04.md
+    - manuscript/ch02/index.md
+    - manuscript/ch02/section-01.md
+    - manuscript/ch02/section-02.md
+    - manuscript/ch02/section-03.md
+    - manuscript/ch02/section-04.md
+    - manuscript/ch03/index.md
+    - manuscript/ch03/section-01.md
+    - manuscript/ch03/section-02.md
+    - manuscript/ch03/section-03.md
+    - manuscript/ch03/section-04.md
+    - manuscript/ch03/section-05.md
+    - manuscript/ch03/section-06.md
+    - manuscript/ch03/section-07.md
+    - manuscript/ch03/section-08.md
+    - manuscript/ch03/section-09.md
+    - manuscript/ch03/section-10.md
+    - manuscript/ch03/section-11.md
+    - manuscript/ch03/section-12.md
+    - manuscript/ch04/index.md
+    - manuscript/ch04/section-01.md
+    - manuscript/ch04/section-02.md
+    - manuscript/ch04/section-03.md
+    - manuscript/ch04/section-04.md
+    - manuscript/ch04/section-05.md
+    - manuscript/ch04/section-06.md
+    - manuscript/ch04/section-07.md
+    - manuscript/ch04/section-08.md
+    - manuscript/ch05/index.md
+    - manuscript/ch05/section-01.md
+    - manuscript/ch05/section-02.md
+    - manuscript/ch05/section-03.md
+    - manuscript/ch05/section-04.md
+    - manuscript/ch05/section-05.md
+    - manuscript/ch05/section-06.md
+    - manuscript/ch06/index.md
+    - manuscript/ch06/section-01.md
+    - manuscript/ch06/section-02.md
+    - manuscript/ch06/section-03.md
+    - manuscript/ch06/section-04.md
+    - manuscript/ch06/section-05.md
+    - manuscript/ch06/section-06.md
+    - manuscript/ch06/section-07.md
+    - manuscript/ch06/section-08.md
+    - manuscript/ch06/section-09.md
+    - manuscript/ch06/section-10.md
+    - manuscript/ch07/index.md
+    - manuscript/ch07/section-01.md
+    - manuscript/ch07/section-02.md
+    - manuscript/ch07/section-03.md
+    - manuscript/ch08/index.md
+    - manuscript/ch08/section-01.md
+    - manuscript/ch08/section-02.md
+    - manuscript/ch08/section-03.md
+    - manuscript/ch08/section-04.md
+    - manuscript/ch08/section-05.md
+    - manuscript/ch08/section-06.md
+    - manuscript/ch08/section-07.md
+    - manuscript/ch08/section-08.md
+    - manuscript/ch08/section-09.md
+    - manuscript/ch08/section-10.md
+    - manuscript/ch08/section-11.md
+    - manuscript/ch08/section-12.md
+    - manuscript/ch09/index.md
+    - manuscript/ch09/section-01.md
+    - manuscript/ch09/section-02.md
+    - manuscript/ch09/section-03.md
+    - manuscript/ch09/section-04.md
+    - manuscript/ch10/index.md
+    - manuscript/ch10/section-01.md
+    - manuscript/ch10/section-02.md
+    - manuscript/ch10/section-03.md
+    - manuscript/ch10/section-04.md
+    - manuscript/ch10/section-05.md
+    - manuscript/ch10/section-06.md
+    - manuscript/ch10/section-07.md
+    - manuscript/ch10/section-08.md
   appendices:
     - manuscript/appendix/index.md
     - manuscript/appendix/glossary.md
     - manuscript/appendix/source-guide.md
-    - manuscript/appendix/reading-roadmaps.md
-    - manuscript/appendix/project-blueprints.md
-    - manuscript/appendix/checklists.md
-    - manuscript/appendix/faq.md
-    - manuscript/appendix/review-questions.md
 
 format:
   html:
     toc: true
     number-sections: false
-    theme: litera
-  typst:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+    pdf-engine: xelatex
+    mainfont: "Noto Serif CJK KR"
+    papersize: a4
     toc: true
     number-sections: false
-    papersize: a4
-    margin:
-      x: 21mm
-      y: 24mm
-    fontsize: 12pt
-    linestretch: 1.26
-    mainfont: "Batang"
-    sansfont: "Malgun Gothic"
-    monofont: "Consolas"
   epub:
     toc: true
     number-sections: false
