@@ -82,8 +82,8 @@ function renderShelf(books, catalogBySlug) {
           </div>
           <div class="card-actions">
             ${isLive ? `
-              <a class="button-primary" href="${escapeHtml(buildBookHref(book, "./books/"))}">책 소개</a>
-              <a class="button-secondary" href="${escapeHtml(buildReaderHref(book, "", "./reader/"))}">바로 읽기</a>
+              <a class="button-primary" href="${escapeHtml(buildBookHref(book, "/books/"))}">책 소개</a>
+              <a class="button-secondary" href="${escapeHtml(buildReaderHref(book, "", "/reader/"))}">바로 읽기</a>
             ` : `
               <span class="button-disabled">${escapeHtml(getWaitingLabel(book.status))}</span>
             `}

@@ -22,7 +22,7 @@ export function buildCatalogStats(catalog) {
   return { chapters, sections };
 }
 
-export function buildBookHref(book, base = "../books/") {
+export function buildBookHref(book, base = "/books/") {
   const slug = encodeURIComponent(book?.slug || DEFAULT_BOOK_SLUG);
   return `${base}?book=${slug}`;
 }
@@ -37,7 +37,7 @@ export function getStatusLabel(status) {
   return "준비 중";
 }
 
-export function buildReaderHref(book, path = "", base = "../reader/") {
+export function buildReaderHref(book, path = "", base = "/reader/") {
   const query = new URLSearchParams({ book: book?.slug || DEFAULT_BOOK_SLUG }).toString();
   const hrefBase = query ? `${base}?${query}` : base;
   if (!path) {

@@ -1,7 +1,7 @@
 import { buildBookHref, buildCatalogStats, buildReaderHref, getBookCatalog, getBooks, escapeHtml, getCoverTitleClassNames, renderCoverTitleLines } from "./shared.js";
 
 const requestedSlug = new URL(location.href).searchParams.get("book") || document.body.dataset.bookSlug;
-const basePrefix = normalizeBasePrefix(document.body.dataset.basePrefix || "..");
+const basePrefix = normalizeBasePrefix(document.body.dataset.basePrefix || "/");
 const title = document.querySelector("#book-title");
 const kicker = document.querySelector("#book-kicker");
 const subtitle = document.querySelector("#book-subtitle");
@@ -82,7 +82,7 @@ function renderBook(book) {
   }
 
   if (requestedSlug !== book.slug) {
-    const canonicalUrl = buildBookHref(book, "./");
+    const canonicalUrl = buildBookHref(book, "/books/");
     history.replaceState(null, "", canonicalUrl);
   }
 }
