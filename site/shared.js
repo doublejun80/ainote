@@ -1,4 +1,4 @@
-import { EMBEDDED_BOOKS, EMBEDDED_CATALOGS } from "./prebuilt-data.js";
+import { EMBEDDED_BOOKS, EMBEDDED_CATALOGS } from "./prebuilt-data.js?v=20260409-cachefix";
 
 const booksUrl = new URL("./books.json", import.meta.url);
 

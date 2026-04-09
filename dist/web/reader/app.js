@@ -1,4 +1,4 @@
-﻿import { EMBEDDED_BOOKS, EMBEDDED_CATALOGS, EMBEDDED_DOCUMENTS } from "../site/prebuilt-data.js";
+﻿import { EMBEDDED_BOOKS, EMBEDDED_CATALOGS, EMBEDDED_DOCUMENTS } from "../site/prebuilt-data.js?v=20260409-cachefix";
 
 const tocRoot = document.querySelector("#toc");
 const articleRoot = document.querySelector("#article");

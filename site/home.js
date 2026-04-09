@@ -1,4 +1,4 @@
-import { buildBookHref, buildCatalogStats, buildReaderHref, getBookCatalog, getBooks, getStatusLabel, escapeHtml, renderCoverTitle } from "./shared.js";
+import { buildBookHref, buildCatalogStats, buildReaderHref, getBookCatalog, getBooks, getStatusLabel, escapeHtml, renderCoverTitle } from "./shared.js?v=20260409-cachefix";
 
 const shelfGrid = document.querySelector("#shelf-grid");
 const metricLiveBooks = document.querySelector("#metric-live-books");

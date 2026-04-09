@@ -17,6 +17,9 @@ const directoriesToCopy = [
 
 const filesToCopy = [
   "index.html",
+  "styles.css",
+  "home.js",
+  "book-detail.js",
   "README.md",
   path.join("docs", "book-outline.md")
 ];

@@ -1,4 +1,4 @@
-import { buildBookHref, buildCatalogStats, buildReaderHref, getBookCatalog, getBooks, escapeHtml, getCoverTitleClassNames, renderCoverTitleLines } from "./shared.js";
+import { buildBookHref, buildCatalogStats, buildReaderHref, getBookCatalog, getBooks, escapeHtml, getCoverTitleClassNames, renderCoverTitleLines } from "./shared.js?v=20260409-cachefix";
 
 const requestedSlug = new URL(location.href).searchParams.get("book") || document.body.dataset.bookSlug;
 const basePrefix = normalizeBasePrefix(document.body.dataset.basePrefix || "/");

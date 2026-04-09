@@ -35,21 +35,21 @@ const server = http.createServer((request, response) => {
   const filePath = path.join(repoRoot, safePath);
 
   if (!filePath.startsWith(repoRoot)) {
-    response.writeHead(403, { "Content-Type": "text/plain; charset=utf-8" });
+    response.writeHead(403, buildHeaders("text/plain; charset=utf-8"));
     response.end("Forbidden");
     return;
   }
 
   fs.stat(filePath, (error, stats) => {
     if (error || !stats.isFile()) {
-      response.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });
+      response.writeHead(404, buildHeaders("text/plain; charset=utf-8"));
       response.end(`Not found: ${relativePath}`);
       return;
     }
 
     const ext = path.extname(filePath).toLowerCase();
     const contentType = mimeTypes[ext] || "application/octet-stream";
-    response.writeHead(200, { "Content-Type": contentType });
+    response.writeHead(200, buildHeaders(contentType));
     fs.createReadStream(filePath).pipe(response);
   });
 });
@@ -58,3 +58,12 @@ server.listen(port, host, () => {
   console.log(`AINOTE bookshop running at http://${host}:${port}/`);
   console.log("Press Ctrl+C to stop the server.");
 });
+
+function buildHeaders(contentType) {
+  return {
+    "Content-Type": contentType,
+    "Cache-Control": "no-cache, no-store, must-revalidate",
+    Pragma: "no-cache",
+    Expires: "0"
+  };
+}
