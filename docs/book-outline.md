@@ -1,6 +1,6 @@
 # 책 목차
 
-이 문서는 현재 원고 frontmatter를 기준으로 갱신됩니다.
+이 문서는 `index.txt`를 기준으로 자동 생성됩니다.
 
 ## 1장. 소프트웨어 개발
 
@@ -26,10 +26,10 @@
 - [프레임워크는 무엇이고, 어떤 프레임워크를 선택하는 게 좋을까요?](/C:/Users/05507/Documents/Github/AINOTE/manuscript/ch03/section-06.md)
 - [프론트엔드 개발 언어는 무엇인가요?](/C:/Users/05507/Documents/Github/AINOTE/manuscript/ch03/section-07.md)
 - [프론트엔드 개발에서 이벤트 처리가 무엇인가요?](/C:/Users/05507/Documents/Github/AINOTE/manuscript/ch03/section-08.md)
-- [리액트(React)는무엇이고, 왜 많이 사용되나요?](/C:/Users/05507/Documents/Github/AINOTE/manuscript/ch03/section-09.md)
+- [리액트(React)는 무엇이고, 왜 많이 사용되나요?](/C:/Users/05507/Documents/Github/AINOTE/manuscript/ch03/section-09.md)
 - [모바일 앱을 개발하는 언어 및 프레임워크는 무엇인가요?](/C:/Users/05507/Documents/Github/AINOTE/manuscript/ch03/section-10.md)
 - [서버 프로그램을 만드는 언어는 무엇인가요?](/C:/Users/05507/Documents/Github/AINOTE/manuscript/ch03/section-11.md)
-- [파이썬 나온지가 20년이나 되었는데, 많이 사용되는 이유는무엇인가요?](/C:/Users/05507/Documents/Github/AINOTE/manuscript/ch03/section-12.md)
+- [파이썬이 나온 지 20년이 넘었는데도 많이 사용되는 이유는 무엇인가요?](/C:/Users/05507/Documents/Github/AINOTE/manuscript/ch03/section-12.md)
 
 ## 4장. 개발할 때 알아야 하는 필수 지식
 
@@ -72,7 +72,7 @@
 
 ## 8장. 네트워크 기술
 
-- [클라이언트 서버통신은 어떻게 되나요?](/C:/Users/05507/Documents/Github/AINOTE/manuscript/ch08/section-01.md)
+- [클라이언트 서버 통신은 어떻게 되나요?](/C:/Users/05507/Documents/Github/AINOTE/manuscript/ch08/section-01.md)
 - [웹 서버 접속 과정은 어떻게 되나요?](/C:/Users/05507/Documents/Github/AINOTE/manuscript/ch08/section-02.md)
 - [웹과 WAS의 역할은 어떻게 되나요?](/C:/Users/05507/Documents/Github/AINOTE/manuscript/ch08/section-03.md)
 - [웹 애플리케이션의 캐시](/C:/Users/05507/Documents/Github/AINOTE/manuscript/ch08/section-04.md)
