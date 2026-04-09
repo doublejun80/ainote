@@ -1,8 +1,6 @@
-name: Nightly Book Gardener
+name: Book Gardener
 
 on:
-  schedule:
-    - cron: "0 18 * * *"
   workflow_dispatch:
 
 permissions:
