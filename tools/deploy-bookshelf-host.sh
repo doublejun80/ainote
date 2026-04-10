@@ -24,6 +24,7 @@ require_cmd node
 require_cmd docker
 require_cmd cloudflared
 require_cmd curl
+require_cmd bash
 
 cd "$REPO_ROOT"
 
@@ -54,10 +55,8 @@ else
   echo "DNS route command failed. DNS 레코드가 이미 있거나 계정 권한 문제일 수 있습니다." >&2
 fi
 
-log "6/6 cloudflared 재시작"
-if command -v brew >/dev/null 2>&1; then
-  brew services restart cloudflared || true
-fi
+log "6/6 cloudflared launch agent 설치 및 재시작"
+bash "$REPO_ROOT/tools/install-cloudflared-agent.sh"
 
 log "최종 확인"
 echo "local:  $LOCAL_URL"
