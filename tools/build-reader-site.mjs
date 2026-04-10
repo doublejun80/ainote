@@ -1,11 +1,14 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { generateStorefrontPages } from "./lib/storefront-renderer.mjs";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const repoRoot = path.resolve(__dirname, "..");
 const outputRoot = path.resolve(repoRoot, process.argv[2] || "dist/web");
+
+generateStorefrontPages({ repoRoot, outputRoot: repoRoot });
 
 const directoriesToCopy = [
   "books",
@@ -34,6 +37,8 @@ for (const directory of directoriesToCopy) {
 for (const file of filesToCopy) {
   copyFile(path.join(repoRoot, file), path.join(outputRoot, file));
 }
+
+generateStorefrontPages({ repoRoot, outputRoot });
 
 writePrebuiltDataModule();
 

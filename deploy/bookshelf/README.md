@@ -34,7 +34,7 @@
 
 ## 참고
 
-- 이 리포지토리에서 확인한 기존 cloudflared 구성은 호스트에서 `localhost` 포트들을 터널로 연결하는 방식입니다.
-- 그래서 이번 책방도 같은 패턴으로 `localhost:18081`을 cloudflared ingress에 연결하도록 맞췄습니다.
+- 이 리포지토리에서 확인한 기존 cloudflared 구성은 호스트의 루프백 포트들을 터널로 연결하는 방식입니다.
+- `localhost`는 일부 환경에서 `::1`로 먼저 풀리며 502를 만들 수 있어서, 이번 책방은 `127.0.0.1:18081`로 고정합니다.
 - `brew services cloudflared`는 이 환경에서 `cloudflared`만 단독 실행하고 종료되어 `error 1` 상태가 될 수 있습니다.
 - 안정적인 운영 기준은 `tools/install-cloudflared-agent.sh`가 생성하는 `com.doublejun.cloudflared.affine` LaunchAgent입니다.

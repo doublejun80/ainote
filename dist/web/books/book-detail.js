@@ -1,1 +1,1 @@
-import "/site/book-detail.js";
+import "/site/book-detail.js?v=20260410-static";

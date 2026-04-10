@@ -1,2 +1,2 @@
   - hostname: bookshelf.doublejun.digital
-    service: http://localhost:18081
+    service: http://127.0.0.1:18081

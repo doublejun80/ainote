@@ -5,7 +5,7 @@ import path from "node:path";
 const homeDir = os.homedir();
 const configPath = path.join(homeDir, ".cloudflared", "config.yml");
 const hostname = "bookshelf.doublejun.digital";
-const service = "http://localhost:18081";
+const service = "http://127.0.0.1:18081";
 const dryRun = process.argv.includes("--dry-run");
 
 if (!fs.existsSync(configPath)) {
@@ -15,8 +15,18 @@ if (!fs.existsSync(configPath)) {
 
 const original = fs.readFileSync(configPath, "utf8");
 
-if (original.includes(`hostname: ${hostname}`)) {
-  console.log(`Ingress already exists for ${hostname}`);
+const existingRulePattern = new RegExp(`(\\s*- hostname: ${escapeRegExp(hostname)}\\n\\s*service: )(.+)(\\n)`);
+
+if (existingRulePattern.test(original)) {
+  const next = original.replace(existingRulePattern, `$1${service}$3`);
+
+  if (dryRun) {
+    process.stdout.write(next);
+    process.exit(0);
+  }
+
+  fs.writeFileSync(configPath, next, "utf8");
+  console.log(`Updated ingress for ${hostname} -> ${service}`);
   process.exit(0);
 }
 
@@ -38,3 +48,7 @@ if (dryRun) {
 
 fs.writeFileSync(configPath, next, "utf8");
 console.log(`Added ingress for ${hostname} -> ${service}`);
+
+function escapeRegExp(value) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}

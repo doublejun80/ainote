@@ -287,7 +287,7 @@ export const EMBEDDED_CATALOGS = {
         },
         {
           "order": 2,
-          "title": "함수, 클래스, 객체와 인스턴스, 모듈과 라이브러리, 컴포넌트, 프레임워크",
+          "title": "함수, 클래스, 객체와 인스턴스, 모듈과라이브러리, 컴포넌트, 프레임워크",
           "file": "section-02.md"
         },
         {
@@ -406,7 +406,7 @@ export const EMBEDDED_CATALOGS = {
         },
         {
           "order": 9,
-          "title": "프로그램, 프로세스, 프로세서의 차이가 뭔가요?",
+          "title": "프로그램, 프로세스, 프로세서의 차이가뭔가요?",
           "file": "section-09.md"
         },
         {
@@ -480,7 +480,7 @@ export const EMBEDDED_CATALOGS = {
         },
         {
           "order": 8,
-          "title": "웹 서버 접속 과정은 어떻게 되나요? (서버 안쪽에서 보는 흐름)",
+          "title": "웹 서버 접속 과정은 어떻게 되나요?",
           "file": "section-08.md"
         },
         {

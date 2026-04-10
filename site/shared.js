@@ -24,7 +24,7 @@ export function buildCatalogStats(catalog) {
 
 export function buildBookHref(book, base = "/books/") {
   const slug = encodeURIComponent(book?.slug || DEFAULT_BOOK_SLUG);
-  return `${base}?book=${slug}`;
+  return `${base.replace(/\/?$/, "/")}${slug}/`;
 }
 
 export function getStatusLabel(status) {

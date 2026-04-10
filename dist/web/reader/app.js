@@ -73,7 +73,7 @@ function applyBookChrome() {
     searchInput.placeholder = `${bookTitle} 안에서 제목 검색`;
   }
   if (bookHomeLink && activeBook?.slug) {
-    bookHomeLink.href = `../books/?book=${encodeURIComponent(activeBook.slug)}`;
+    bookHomeLink.href = `../books/${encodeURIComponent(activeBook.slug)}/`;
   }
 }
 
